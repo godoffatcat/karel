@@ -5,7 +5,7 @@ var eleInput = function(type) {
 }
 
 // 这里重复的坐标或许可以用继承？
-var eleFix = function(y, w, h){
+var eleFix = function(y, w, h) {
     firstEle = {
         x : 200,
         y : y, 
@@ -25,7 +25,7 @@ var eleFix = function(y, w, h){
         y : y, 
         w: w,
         h: h,
-    },
+    }
 }
 
 eleFix(150, 40, 40)
