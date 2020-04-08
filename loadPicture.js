@@ -9,7 +9,5 @@ var imageFromPath = function (path) {
 // console.log('引入图片地址', imageFromPath)
 
 var loadPic = function(image, x, y, w, h) {
-    
     context.drawImage(image, x, y, w, h)
 }
-

@@ -1,18 +1,7 @@
-// var audio = document.getElementById('yepRight')
-// 图片导入
-var imageFromPath = function (path) {
-  var img = new Image();
-  img.src = path;
-  console.log("skill path", img.src);
-  return img;
-};
-console.log("引入图片地址", imageFromPath);
-
 //技能(独立)
 // 随机出现的技能列表，也需要做多个坐标，以及图片导入。
 var Skill = function () {
-  var image = imageFromPath("skillimg/invoker_deafening.png");
-  console.log("imageskill", image);
+  var image = skillList.deafening[0]
   var o = {
     image: image,
     x: 400,
@@ -30,10 +19,6 @@ var Skill = function () {
     o.displayFor = true;
   };
 
-  // move是为了让下一个技能左移，可是多个技能的多个坐标，需要放在一个仓库里吧？
-  // 按键也需要和当前技能匹配哦。
-  // 是不是需要每一个技能都需要有她独立的{}？
-
   buttonS.onclick = function () {
     o.done();
     console.log("display?", o.displayFor);
@@ -44,9 +29,9 @@ var Skill = function () {
 // 当前输入的元素（独立）..
 // 如果技能正确，则alive回归false， 需要加个判断， 和skill联动
 var eleKey = function () {
-  var imageICE = imageFromPath(eleList.ice[0]);
-  var imageTHUNDER = imageFromPath(eleList.thunder[0]);
-  var imageFIRE = imageFromPath(eleList.fire[0]);
+  var imageICE = loadPic(eleList.ice[0]);
+  var imageTHUNDER = loadPic(eleList.thunder[0]);
+  var imageFIRE = loadPic(eleList.fire[0]);
 
   var ice = {
     image: imageICE,
@@ -74,17 +59,17 @@ var eleKey = function () {
 
         //按键判断区
     if ([event.key] == "q") {
-      loadPic(ice.image, 100, 200, 40, 40);
+      loadPic(eleAry[0]);
       ice.alive = true;
       inputSkill.push("q");
       console.log('当前输入', inputSkill)
     } else if ([event.key] == "w") {
-      loadPic(thunder.image, 160, 200, 40, 40);
+      loadPic(eleAry[1]);
       thunder.alive = true;
       inputSkill.push("w");
       console.log('当前输入', inputSkill)
     } else if ([event.key] == "e") {
-      loadPic(fire.image, 220, 200, 40, 40);
+      loadPic(eleAry[2]);
       fire.alive = true;
       inputSkill.push("r");
       console.log('当前输入', inputSkill)
@@ -94,22 +79,22 @@ var eleKey = function () {
 
 };
 
-// var judge = function () {
-//   let a = skillList.skill01;
-//   let b = inputSkill;
-//   if (a.length === b.length) {
-//     for (let i = 1; i < a.length; i++) {
-//       for (let j = 0; j < b.length; j++) {
-//         if (b[j] === a[i]) {
-//           b = b.filter(function (v) {
-//             return v !== b[j];
-//           });
-//         }
-//       }
-//     }
-//     yepskill()
-// } 
-// };
+var judge = function () {
+  let a = skillList.deafening;
+  let b = inputSkill;
+  if (a.length === b.length) {
+    for (let i = 1; i < a.length; i++) {
+      for (let j = 0; j < b.length; j++) {
+        if (b[j] === a[i]) {
+          b = b.filter(function (v) {
+            return v !== b[j];
+          });
+        }
+      }
+    }
+    yepskill()
+} 
+};
 
 // window.addEventListener("keydown", (event) => {
 //   if ([event.key] == "r") {

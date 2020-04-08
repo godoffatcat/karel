@@ -1,17 +1,23 @@
 // 技能的图片位置、匹配按键
 var skillList = {
-        skill01 : ['path.jpg' , 'q', 'w', 'e'],
-        skill02 : ['path.jpg' , 'q', 'q', 'e'],
-        skill03 : ['path.jpg' , 'q', 'e', 'e'],
-        skill04 : ['path.jpg' , 'w', 'w', 'e'],
-        skill05 : ['path.jpg' , 'w', 'e', 'e'],
-}
+  deafening: [imageFromPath('skillimg/deafening.png'), "q", "w", "e"],
+  coldsnap: [imageFromPath("skillimg/coldsnap.png"), "q", "q", "q"],
+  ghostwalk: [imageFromPath("skillimg/ghostwalk.png"), "w", "w", "q"],
+  tornado: [imageFromPath("skillimg/tornado.png"), "q", "q", "w"],
+  emp: [imageFromPath("skillimg/emp.png"), "w", "w", "w"],
+  alacrity: [imageFromPath("skillimg/alacrity.png"), "w", "w", "e"],
+  chaosmeteor: [imageFromPath("skillimg/chaosmeteor.png"), "w", "e", "e"],
+  sunstrike: [imageFromPath("skillimg/sunstrike.png"), "e", "e", "e"],
+  forgespirit: [imageFromPath("skillimg/forgespirit.png"), "e", "e", "q"],
+  icewall: [imageFromPath("skillimg/icewall.png"), "q", "q", "e"],
+};
 
-console.log('path test', skillList.skill01[0])
+console.log("path test", skillList.deafening[0]);
 
 // 按键的图片位置、音效
 var eleList = {
-    ice : ['skillimg/invoker_ice.png', 'bgm'],
-    thunder : ['skillimg/invoker_thunder.png', 'bgm'],
-    fire : ['skillimg/invoker_fire.png', 'bgm'],
-}
+  ice: [imageFromPath("skillimg/ice.png"), "bgm"],
+  thunder: [imageFromPath("skillimg/thunder.png"), "bgm"],
+  fire: [imageFromPath("skillimg/fire.png"), "bgm"],
+};
+
